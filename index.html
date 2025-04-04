@@ -16,6 +16,11 @@
     <!-- Meta tag for mobile support -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
     <!-- My Script -->
     <script src="script.js" defer></script>
 
@@ -26,22 +31,22 @@
     <div id="container">
 
         <header>
-
-            <h1>Your name here.</h1>
-
-            <h2>DES 157B - Interactive Media III - (term, year & section)</h2>
-
-            <!--this is for the interactive banner-->
             <div id="banner">
-                <h3>This is my banner!</h3>
+                <section id="banner-head">
+                    <h2>Lucas Wang</h2>
+                    <button>make me <span id="button-state">spicy</span>!</button>
+                </section>
+                <h1>DES 157B — Interactive Media III</h1>
+                <section id="banner-foot">
+                    <h2>SQ 2025 - A02</h2>
+                </section>
+                <div class="banner-image" id="sweet-image"></div>
+                <div class="banner-image" id="spicy-image"></div>
             </div>
-
         </header>
 
         <main>
-
             <section id="projects">
-
                 <h3>ministudios</h3>
                 <nav>
                     <ol>
@@ -58,7 +63,7 @@
                         <li><a href="#">Toolkit Assignment 3</a></li>
                     </ol>
                 </nav>
-
+                <div class="filler"></div>
             </section>
 
             <section id="research">
@@ -73,21 +78,22 @@
                         <li><a href="#">Research Assignment 6</a></li>
                     </ul>
                 </nav>
-
+                <div class="filler"></div>
             </section>
 
             <section id="development">
                 <h3>development</h3>
                 <nav>
                     <ul>
-                        <li><a href="#">Development Assignment 1</a></li>
-                        <li><a href="#">Development Assignment 2</a></li>
-                        <li><a href="#">Development Assignment 3</a></li>
-                        <li><a href="#">Development Assignment 4</a></li>
-                        <li><a href="#">Development Assignment 5</a></li>
-                        <li><a href="#">Development Assignment 6</a></li>
+                        <li><a href="#">Dev Assignment 1</a></li>
+                        <li><a href="#">Dev Assignment 2</a></li>
+                        <li><a href="#">Dev Assignment 3</a></li>
+                        <li><a href="#">Dev Assignment 4</a></li>
+                        <li><a href="#">Dev Assignment 5</a></li>
+                        <li><a href="#">Dev Assignment 6</a></li>
                     </ul>
                 </nav>
+                <div class="filler"></div>
             </section>
 
             <section id="capstone">
@@ -98,12 +104,13 @@
                         <li><a href="#">project</a></li>
                     </ul>
                 </nav>
+                <div class="filler"></div>
             </section>
-
-            <button>switch</button>
-
         </main>
 
+        <footer>
+            <p>"To me, home is about the people around me—people I can share my <span id="sweet">sweet</span> and <span id="spicy">spicy</span> side with."</p>
+        </footer>
     </div>
 
 </body>
