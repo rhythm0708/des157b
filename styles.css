@@ -78,10 +78,11 @@ body {
 
 button {
     background-color: #751210;
+    color: #EBEBEB;
     transition: all 1s;
 }
 
-#banner h1, #banner h2, button {
+#banner h1, #banner h2 {
     color: #EBEBEB;
     transition: all 2s;
 }
@@ -233,22 +234,24 @@ body {
 }
 
 button:hover {
-    background-color: coral;
+    background-color: #855840;
     cursor: pointer;
 }
 
 section a:hover {
-    background-color: orange;
+    background-color: #d5ca8f;
     color: #333;
+    transition: background-color 1s, color 1s;
 }
 
 section.switch a:hover {
-    background-color: #333;
+    background-color: #9d6a4f;
     color: rgb(235, 235, 235);
+    transition: background-color 1s, color 1s;
 }
 
 button.switch:hover {
-    background-color: #333;
+    background-color: #874650;
     color: rgb(235, 235, 235)
 }
 
@@ -264,8 +267,8 @@ main section {
     left: 0;
     width: 100%;
     height: 0px;
-    background: url('images/sweet-gumdrops-filled.svg') no-repeat center/cover;
-    /*background-color: #BF4440;*/
+    background: url('images/sweet-gumdrops-filled.svg') no-repeat top center;
+    background-size: 100% auto;
     opacity: 75%;
 
     pointer-events: none;
@@ -286,23 +289,23 @@ main section {
 button.switch {
     background-color: #FCAAB6;
     color: #252525;
-    transition: all 1s;
+    transition: background-color 1s, color 1s;
 }
 
 body.switch {
     background-color: #751210;
     color: #EBEBEB;
-    transition: all 2s;
+    transition: background-color 2s color 2s;
 }
 
 main section.switch {
     border: 1px #F98E89 solid;
-    transition: all 2s;
+    transition: border 2s, background-color 1s, color 1s;
 }
 
 main section.switch h3, main section.switch a {
     color: #EBEBEB;
-    transition: all 2s;
+    transition: color 2s, background-color 1s, color 1s;
 }
 
 footer.switch p {
@@ -333,7 +336,7 @@ footer.switch p {
 }
 
 .filler.switch {
-    background: url('images/spicy-chili-flakes-filled.svg') no-repeat center/cover;
-    transition: 2s background;
-    transition: height 0.5s ease-in-out;
+    background: url('images/spicy-chili-flakes-filled.svg') no-repeat top center;
+    background-size: 100% auto;
+    transition: background 2s, height 0.5s ease-in-out;
 }
