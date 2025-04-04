@@ -302,7 +302,7 @@ button.switch {
 body.switch {
     background-color: #751210;
     color: #EBEBEB;
-    transition: background-color 2s color 2s;
+    transition: background-color 2s, color 2s;
 }
 
 main section.switch {
