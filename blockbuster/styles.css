@@ -1,0 +1,79 @@
+/* Resets */
+
+* {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, p, nav ul {
+    margin: 0;
+    padding: 5px;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+   
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Typography */
+.fa-solid {
+    font-size: 36px;
+}
+
+header h1 {
+    text-align: center;
+}
+
+/* Color */
+
+/* Layout and Positioning */
+body {
+    min-width: 1200px;
+    min-height: 750px;
+}
+
+header, footer {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+}
+
+#volume {
+    position: relative;
+    flex: 1;
+}
+
+.fa-house, .fa-volume-high, .fa-volume-xmark {
+    position: absolute;
+    right: 10px;
+}
+
+.fa-volume-high {
+    visibility: hidden;
+}
+
+.fa-volume-xmark {
+    visibility: visible;
+}
+
+/* Padding and Margins */
+body {
+    padding: 50px;
+}
+
+header, footer {
+    margin: 20px 0;
+}

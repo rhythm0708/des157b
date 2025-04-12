@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A 4-Panel Motion Comic</title>
+
+    <!-- Normalize.css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+
+    <!-- Stylesheet-->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+
+    <!-- Feather Icons -->
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/0a510a4691.js" crossorigin="anonymous"></script>
+
+    <!-- Script -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>A 4-Panel Motion Comic</h1>
+        <i class="fa-solid fa-house"></i>
+    </header>
+    <main>
+        <section>
+            <article id="panel-1">
+                <video id="vid-1">
+                    <source src="videos/1.webm" type="video/webm">
+                    <source src="videos/1.mp4" type="video/mp4">
+
+                    <p>Your browser doesn't support HTML5 video. Here is a <a href="videos/1.mp4">link to the video</a> instead.</p>
+                </video>
+            </article>
+            <article id="panel-2">
+                <source src="videos/2.webm" type="video/webm">
+                <source src="videos/2.mp4" type="video/mp4">
+
+                <p>Your browser doesn't support HTML5 video. Here is a <a href="videos/2.mp4">link to the video</a> instead.</p>
+            </article>
+        </section>
+        <article id="panel-3">
+            <source src="videos/3.webm" type="video/webm">
+            <source src="videos/3.mp4" type="video/mp4">
+
+            <p>Your browser doesn't support HTML5 video. Here is a <a href="videos/3.mp4">link to the video</a> instead.</p>
+        </article>
+        <article id="panel-4">
+            <source src="videos/4.webm" type="video/webm">
+            <source src="videos/4.mp4" type="video/mp4">
+
+            <p>Your browser doesn't support HTML5 video. Here is a <a href="videos/4.mp4">link to the video</a> instead.</p>
+        </article>
+    </main>
+    <footer>
+        <p>reset</p>
+        <div id="volume">
+            <i class="fa-solid fa-volume-high"></i>
+            <i class="fa-solid fa-volume-xmark"></i>
+        </div>
+    </footer>
+</body>
+</html>
