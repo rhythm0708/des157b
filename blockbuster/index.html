@@ -14,7 +14,13 @@
     <!-- Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Kite+One&family=Marvel:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <!-- Preload Videos -->
+    <link rel="preload" href="videos/1.mp4" as="video" type="video/mp4">
+    <link rel="preload" href="videos/2.mp4" as="video" type="video/mp4">
+    <link rel="preload" href="videos/3.mp4" as="video" type="video/mp4">
+    <link rel="preload" href="videos/4.mp4" as="video" type="video/mp4">
 
     <!-- Feather Icons -->
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
@@ -28,42 +34,60 @@
 <body>
     <header>
         <h1>A 4-Panel Motion Comic</h1>
-        <i class="fa-solid fa-house"></i>
+        <a class="fa-solid fa-house" href="../index.html"></a>
     </header>
     <main>
-        <section>
+        <section id="sec-1">
             <article id="panel-1">
-                <video id="vid-1">
+                <video id="vid-1" muted playsinline>
                     <source src="videos/1.webm" type="video/webm">
                     <source src="videos/1.mp4" type="video/mp4">
 
                     <p>Your browser doesn't support HTML5 video. Here is a <a href="videos/1.mp4">link to the video</a> instead.</p>
                 </video>
+                <button class="play" id="play-1">
+
+                </button>
             </article>
             <article id="panel-2">
-                <source src="videos/2.webm" type="video/webm">
-                <source src="videos/2.mp4" type="video/mp4">
+                <video id="vid-2" class="grayed" muted playsinline>
+                    <source src="videos/2.webm" type="video/webm">
+                    <source src="videos/2.mp4" type="video/mp4">
 
-                <p>Your browser doesn't support HTML5 video. Here is a <a href="videos/2.mp4">link to the video</a> instead.</p>
+                    <p>Your browser doesn't support HTML5 video. Here is a <a href="videos/2.mp4">link to the video</a> instead.</p>
+                </video>   
+                <button class="play hidden" id="play-2">
+
+                </button>
             </article>
         </section>
-        <article id="panel-3">
-            <source src="videos/3.webm" type="video/webm">
-            <source src="videos/3.mp4" type="video/mp4">
-
-            <p>Your browser doesn't support HTML5 video. Here is a <a href="videos/3.mp4">link to the video</a> instead.</p>
-        </article>
-        <article id="panel-4">
-            <source src="videos/4.webm" type="video/webm">
-            <source src="videos/4.mp4" type="video/mp4">
-
-            <p>Your browser doesn't support HTML5 video. Here is a <a href="videos/4.mp4">link to the video</a> instead.</p>
-        </article>
+        <section id="sec-2">
+            <article id="panel-3">
+                <video id="vid-3" class="grayed" muted playsinline>
+                    <source src="videos/3.webm" type="video/webm">
+                    <source src="videos/3.mp4" type="video/mp4">
+    
+                    <p>Your browser doesn't support HTML5 video. Here is a <a href="videos/3.mp4">link to the video</a> instead.</p>
+                </video>
+                <button class="play hidden" id="play-3">
+    
+                </button>
+            </article>
+            <article id="panel-4">
+                <video id="vid-4" class="grayed" muted playsinline>
+                    <source src="videos/4.webm" type="video/webm">
+                    <source src="videos/4.mp4" type="video/mp4">
+    
+                    <p>Your browser doesn't support HTML5 video. Here is a <a href="videos/4.mp4">link to the video</a> instead.</p>
+                </video> 
+                <button class="play hidden" id="play-4"></button>
+            </article>
+        </section>
     </main>
     <footer>
-        <p>reset</p>
+        <button class="reset">reset</button>
         <div id="volume">
-            <i class="fa-solid fa-volume-high"></i>
+            <i class="fa-solid fa-volume-high icon-hidden"></i>
             <i class="fa-solid fa-volume-xmark"></i>
         </div>
     </footer>
