@@ -40,6 +40,12 @@ header h1 {
     text-align: center;
 }
 
+button {
+    font-family: "Marvel", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
 /* Color */
 body {
     background: #f7fffd;
@@ -51,7 +57,7 @@ main {
     border: 2px solid black;
 }
 
-section, article {
+section, article, video {
     border: 2px solid black;
 }
 
