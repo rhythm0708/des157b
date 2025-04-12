@@ -16,11 +16,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Kite+One&family=Marvel:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
-    <!-- Preload Videos -->
-    <link rel="preload" href="videos/1.mp4" as="video" type="video/mp4">
-    <link rel="preload" href="videos/2.mp4" as="video" type="video/mp4">
-    <link rel="preload" href="videos/3.mp4" as="video" type="video/mp4">
-    <link rel="preload" href="videos/4.mp4" as="video" type="video/mp4">
+    <!-- Preload Videos (moved below)-->
 
     <!-- Feather Icons -->
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
@@ -39,7 +35,7 @@
     <main>
         <section id="sec-1">
             <article id="panel-1">
-                <video id="vid-1" muted playsinline>
+                <video id="vid-1" preload="auto" muted playsinline>
                     <source src="videos/1.webm" type="video/webm">
                     <source src="videos/1.mp4" type="video/mp4">
 
@@ -50,7 +46,7 @@
                 </button>
             </article>
             <article id="panel-2">
-                <video id="vid-2" class="grayed" muted playsinline>
+                <video id="vid-2" class="grayed" preload="auto" muted playsinline>
                     <source src="videos/2.webm" type="video/webm">
                     <source src="videos/2.mp4" type="video/mp4">
 
@@ -63,7 +59,7 @@
         </section>
         <section id="sec-2">
             <article id="panel-3">
-                <video id="vid-3" class="grayed" muted playsinline>
+                <video id="vid-3" class="grayed" preload="auto" muted playsinline>
                     <source src="videos/3.webm" type="video/webm">
                     <source src="videos/3.mp4" type="video/mp4">
     
@@ -74,7 +70,7 @@
                 </button>
             </article>
             <article id="panel-4">
-                <video id="vid-4" class="grayed" muted playsinline>
+                <video id="vid-4" class="grayed" preload="auto" muted playsinline>
                     <source src="videos/4.webm" type="video/webm">
                     <source src="videos/4.mp4" type="video/mp4">
     

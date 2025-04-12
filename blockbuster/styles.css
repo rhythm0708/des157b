@@ -69,7 +69,7 @@ section, article, video {
 }
 
 .grayed {
-    filter: grayscale(100%);
+    filter: grayscale(100%) contrast(120%);
     transition: all 1s;
 }
 
