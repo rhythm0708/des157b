@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metacritic Matching!</title>
+
+    <!-- Normalize.css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+
+    <!-- Stylesheet-->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Mitr:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/0a510a4691.js" crossorigin="anonymous"></script>
+
+    <!-- PapaParse (for data) -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+    <script src="parse/parse.js" defer></script> -->
+
+    <!-- Script -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>metacritic matching!</h1>
+    </header>
+    <main>
+        <section id="stats">
+            <p>Score: <span id="score">0</span></p>
+            <p>Rounds Played: <span id="rounds">0</span></p>
+        </section>
+        <section id="instructions">
+            <ul>
+                <li>each round, you will be presented with a game. Your goal is to identify a game with a <a href="#">metacritic</a> score as close as possible to the game presented.</li>
+                <li>earn points based on how close you are!</li>
+                <li>your cumulative score is displayed on the top right.</li>
+                <li>this idea was inspired by <a href="#">alpharad's game show</a></li>
+            </ul>
+        </section>
+        <section id="game">
+            <h2 id="target">Game: <span id="target-game">-</span></h2>
+
+            <input type="text" id="search-box" placeholder="Type here">
+            <div id="suggestions-box"></div>
+            <button id="confirm-game">Confirm</button>
+        </section>
+        <section id="results" class="invisible">
+            <div id="number-line">
+                <div id="line">
+                    <h3 id="zero">0</h3>
+                    <h3 id="hundred">100</h3>
+                    <div class="arrow">
+                        <div class="arrow-line"></div>
+                        <div class="arrow-left"></div>
+                        <div class="arrow-right"></div>
+                        <p><span id="diff-sign">+</span><span id="diff-num">12</span></p>
+                    </div>
+                    <div id="red-dot"><p>85</p></div>
+                    <div id="blue-dot"><p>85</p></div>
+                </div>
+            </div>
+            <div id="comment">
+                <p>Your guess was <span id="user-guess">55</span>. The real answer was <span id="target-num">67</span>. You were <span id="diff">12</span> point(s) off!</p> 
+            </div>
+            <button id="next-game">Next</button>
+        </section>
+    </main>
+    <footer>
+        
+    </footer>
+</body>
+</html>
