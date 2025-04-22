@@ -1,0 +1,18 @@
+body {
+    background-color: lightblue;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#map { 
+    width: 90svw;
+    height: 80svh;
+    border: 2px solid gray;
+}
