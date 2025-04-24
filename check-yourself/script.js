@@ -70,35 +70,7 @@
             updateScore(diff);
 
             // Display and move dots.
-            resultsBox.classList.remove("invisible");
-            redDot.style.left = `${playerGuess}%`;
-            redDot.style.transform = `translate(-${playerGuess}%, -50%)`;
-            redDot.querySelector("p").textContent = playerGuess;
-            blueDot.style.left = `${realAns}%`;
-            blueDot.style.transform = `translate(-${realAns}%, -50%)`;
-            blueDot.querySelector("p").textContent = realAns;
-
-            // Move arrow.
-            arrowContainer.style.width = `calc(${diff}% + 20px)`;
-            if(playerGuess > realAns) {
-                arrowContainer.querySelector(".arrow-right").classList.add("invisible");
-                arrowContainer.querySelector(".arrow-left").classList.remove("invisible");
-
-                arrowContainer.style.right = `${100-playerGuess}%`;
-                arrowContainer.style.transform = `translateY(-50%)`;
-                arrowDiffSign.textContent = "-";
-            } else if(playerGuess < realAns) {
-                arrowContainer.querySelector(".arrow-left").classList.add("invisible");
-                arrowContainer.querySelector(".arrow-right").classList.remove("invisible");
-
-                arrowContainer.style.right = `${100-realAns}%`;
-                arrowContainer.style.transform = `translateY(-50%)`;
-                arrowDiffSign.textContent = "+";
-            } else {
-                arrowContainer.querySelector(".arrow-left").classList.add("invisible");
-                arrowContainer.querySelector(".arrow-right").classList.add("invisible");
-            }
-            arrowDiffNum.textContent = diff;
+            displayResults(playerGuess, realAns, diff);
 
             // Change comment.
             commentUserGuess.textContent = playerGuess;
@@ -106,6 +78,7 @@
             commentDiff.textContent = diff;
 
             // Disallow multiple submits.
+            searchBox.readOnly = true;
             roundPlayed = true;
         } else {
             alert("you've already submitted an answer for this round!");
@@ -116,6 +89,7 @@
         e.preventDefault();
 
         resultsBox.classList.add("invisible");
+        searchBox.readOnly = false;
         searchBox.value = "";
         roundPlayed = false;
         randomizeGame();
@@ -150,9 +124,7 @@
         } else {
             thisRoundScore = 0;
         }
-        
         score += (thisRoundScore);
-
         playerScore.textContent = score;
         playerRounds.textContent = ++rounds;
     }
@@ -181,6 +153,39 @@
         // Two ternary expressions **can probably combine.
         match ? searchBox.classList.add("valid") : searchBox.classList.remove("valid");
         match ? confirmButton.style.display = "block" : confirmButton.style.display = "none";
+    }
+
+    function displayResults(playerGuess, realAns, diff){
+        console.log(playerGuess, realAns, diff);
+        resultsBox.classList.remove("invisible");
+        redDot.style.left = `${playerGuess}%`;
+        redDot.style.transform = `translate(-${playerGuess}%, -50%)`;
+        redDot.querySelector("p").textContent = playerGuess;
+        blueDot.style.left = `${realAns}%`;
+        blueDot.style.transform = `translate(-${realAns}%, -50%)`;
+        blueDot.querySelector("p").textContent = realAns;
+
+        // Move arrow.
+        arrowContainer.style.width = `calc(${diff}% + 20px)`;
+        if(playerGuess > realAns) {
+            arrowContainer.querySelector(".arrow-right").classList.add("invisible");
+            arrowContainer.querySelector(".arrow-left").classList.remove("invisible");
+
+            arrowContainer.style.right = `${100-playerGuess}%`;
+            arrowContainer.style.transform = `translateY(-50%)`;
+            arrowDiffSign.textContent = "-";
+        } else if(playerGuess < realAns) {
+            arrowContainer.querySelector(".arrow-left").classList.add("invisible");
+            arrowContainer.querySelector(".arrow-right").classList.remove("invisible");
+
+            arrowContainer.style.right = `${100-realAns}%`;
+            arrowContainer.style.transform = `translateY(-50%)`;
+            arrowDiffSign.textContent = "+";
+        } else {
+            arrowContainer.querySelector(".arrow-left").classList.add("invisible");
+            arrowContainer.querySelector(".arrow-right").classList.add("invisible");
+        }
+        arrowDiffNum.textContent = diff;
     }
 
     function toTitleCase(str){

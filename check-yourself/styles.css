@@ -32,11 +32,22 @@ a {
 h1 {
     font-family: "Luckiest Guy", cursive;
     font-weight: 400;
+    font-size: 42px;
+    text-align: center;
 }
 
-h2, h3, button, p, ul li, div p {
+h2, h3, button, p, ul li, div p, input {
     font-family: "Mitr", sans-serif;
     font-weight: 400;
+}
+
+#stats {
+    font-size: 24px;
+}
+
+#instructions ul li {
+    font-size: 18px;
+    line-height: 1.5em;
 }
 
 .highlight {
@@ -47,6 +58,19 @@ h3 {
     text-align: center;
 }
 
+#game h2 {
+    text-align: center;
+}
+
+#game input {
+    line-height: 2em;
+    padding-left: 5px;
+}
+
+#comment p {
+    font-size: 18px;
+}
+
 button {
     border-radius: 25%;
 }
@@ -55,18 +79,43 @@ button {
     text-align: center;
 }
 
+.fa-house {
+    font-size: 36px;
+}
+
 /* Colors */
+#instructions {
+    border: 1px black solid;
+}
+
 .highlight {
-    color: cyan;
+    color: red;
 }
 
 .valid {
-    background-color: greenyellow;
+    background-color: rgb(151, 235, 250);
 }  
 
 #line {
     background-color: black;
     /* border-radius: 25%; */
+}
+
+.suggestion-item {
+    border: 1px solid black;
+    background-color: transparent;
+    transition: background-color 0.1s ease-in;
+}
+
+.suggestion-item:hover {
+    background-color: lightblue;
+    transition: background-color 0.1s ease-in;
+}
+
+#confirm-game, #next-game {
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
 }
 
 #red-dot {
@@ -104,18 +153,90 @@ button {
 /* Layout and Positioning */
 body {
     width: 90%;
+    margin: 50px auto;
+}
+
+h1 {
+    margin-top: 100px;
+}
+
+#home {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+#stats {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#instructions {
+    width: 65%;
     margin: 0 auto;
 }
 
-#confirm-game {
-    display: none;
+#game {
+    width: 65%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#user-guess-box {
+    width: 40%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#results {
+    width: 50%;
+    position: relative;
+    margin: 50px auto;
+
+    display: grid;
+    place-items: center;
+}
+
+#number-line {
+    width: 100%;
+    margin: 0 auto;
 }
 
 #line {
     position: relative;
-    width: 50svw;
+    width: 100%;
     height: 10px;
-    margin: 50px 0;
+    margin: 50px auto;
+}
+
+#comment {
+    position: relative;
+}
+
+#comment p {
+    width: 90%;
+}
+
+#confirm-game {
+    display: none;
+    position: absolute;
+    right: -100px;
+    transition: background-color 0.1s ease-in-out;
+}
+
+#next-game {
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    transform: translateY(-50%);
+    transition: background-color 0.1s ease-in-out;
 }
 
 #zero {
@@ -182,9 +303,21 @@ body {
     transform: translateX(-50%);
 }
 
-/* Padding and Margins */
-
 /* Interactivity */
 .invisible {
-    display: none;
+    opacity: 0;
+}
+
+#confirm-game:hover {
+    background-color: greenyellow;
+    transition: background-color 0.1s ease-in-out;
+}
+
+#next-game:hover {
+    background-color: rgb(223, 176, 159);
+    transition: background-color 0.1s ease-in-out;
+}
+
+.fa-house:hover {
+    transform: scale(1.1);
 }

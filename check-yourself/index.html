@@ -31,6 +31,9 @@
         <h1>metacritic matching!</h1>
     </header>
     <main>
+        <section id="home">
+            <a class="fa-solid fa-house" id="home" href="../index.html"></a>
+        </section>
         <section id="stats">
             <p>Score: <span id="score">0</span></p>
             <p>Rounds Played: <span id="rounds">0</span></p>
@@ -40,15 +43,17 @@
                 <li>each round, you will be presented with a game. Your goal is to identify a game with a <a href="#">metacritic</a> score as close as possible to the game presented.</li>
                 <li>earn points based on how close you are!</li>
                 <li>your cumulative score is displayed on the top right.</li>
-                <li>this idea was inspired by <a href="#">alpharad's game show</a></li>
+                <li>this idea was inspired by <a href="https://youtu.be/G11R17_SFiE?si=M5u-uWjoAdmnlBeK&t=294">alpharad's game show</a></li>
             </ul>
         </section>
         <section id="game">
             <h2 id="target">Game: <span id="target-game">-</span></h2>
 
-            <input type="text" id="search-box" placeholder="Type here">
-            <div id="suggestions-box"></div>
-            <button id="confirm-game">Confirm</button>
+            <div id="user-guess-box">
+                <input type="text" id="search-box" placeholder="Type here">
+                <div id="suggestions-box"></div>
+                <button id="confirm-game">Confirm</button>
+            </div>
         </section>
         <section id="results" class="invisible">
             <div id="number-line">
@@ -67,8 +72,8 @@
             </div>
             <div id="comment">
                 <p>Your guess was <span id="user-guess">55</span>. The real answer was <span id="target-num">67</span>. You were <span id="diff">12</span> point(s) off!</p> 
+                <button id="next-game">Next</button>
             </div>
-            <button id="next-game">Next</button>
         </section>
     </main>
     <footer>
