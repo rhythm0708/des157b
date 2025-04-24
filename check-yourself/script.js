@@ -11,6 +11,7 @@
     let rounds = 0;
     let currGame;
     let roundPlayed = false;
+    let usedGames = [];
 
     // DOM elements.
     const playerScore = document.querySelector("#score");
@@ -62,7 +63,7 @@
     confirmButton.addEventListener("click", function(e){
         e.preventDefault();
 
-        if(!roundPlayed){
+        if(!roundPlayed && !usedGames.includes(searchBox.value)){
             // Update score.
             let playerGuess = getObjectByTitle(searchBox.value).score;
             let realAns = getObjectByTitle(targetGame.textContent).score;
@@ -80,6 +81,11 @@
             // Disallow multiple submits.
             searchBox.readOnly = true;
             roundPlayed = true;
+
+            // Add guess to usedGames list.
+            usedGames.push(searchBox.value);
+        } else if(usedGames.includes(searchBox.value)) {
+            alert("sneaky... you can't do that!")
         } else {
             alert("you've already submitted an answer for this round!");
         }
@@ -110,6 +116,7 @@
         let randomNumber = Math.floor(Math.random() * metaData.length);
         currGame = metaData[randomNumber].title;
         targetGame.textContent = currGame;
+        usedGames.push(currGame);
     }
 
     function getObjectByTitle(title){

@@ -97,18 +97,12 @@ button {
 }  
 
 #line {
-    background-color: black;
-    /* border-radius: 25%; */
+    background-color: lightgray;
 }
 
 .suggestion-item {
     border: 1px solid black;
     background-color: transparent;
-    transition: background-color 0.1s ease-in;
-}
-
-.suggestion-item:hover {
-    background-color: lightblue;
     transition: background-color 0.1s ease-in;
 }
 
@@ -134,20 +128,20 @@ button {
 
 .arrow-line {
     width: 100%;
-    height: 2px;
-    background-color: gray;
+    height: 5px;
+    background-color: black;
 }
 
 .arrow-right {
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
-    border-left: 15px solid gray;
+    border-left: 15px solid black;
 }
 
 .arrow-left {
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
-    border-right: 15px solid gray;
+    border-right: 15px solid black;
 }
 
 /* Layout and Positioning */
@@ -320,4 +314,9 @@ h1 {
 
 .fa-house:hover {
     transform: scale(1.1);
+}
+
+.suggestion-item:hover {
+    background-color: lightblue;
+    transition: background-color 0.1s ease-in;
 }
