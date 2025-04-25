@@ -24,7 +24,6 @@ nav ul li a {
 }
 
 a {
-    text-decoration: none;
     color: inherit;
 }
 
@@ -83,17 +82,21 @@ button {
     font-size: 36px;
 }
 
+#comment p {
+    line-height: 1.5em;
+}
+
 /* Colors */
 #instructions {
-    border: 1px black solid;
+    border: 1px #2B2B2B solid;
 }
 
 .highlight {
-    color: red;
+    color: #F34624;
 }
 
 .valid {
-    background-color: rgb(151, 235, 250);
+    background-color: rgb(167, 219, 236);
 }  
 
 #line {
@@ -101,7 +104,7 @@ button {
 }
 
 .suggestion-item {
-    border: 1px solid black;
+    border: 1px solid #2B2B2B;
     background-color: transparent;
     transition: background-color 0.1s ease-in;
 }
@@ -116,32 +119,42 @@ button {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: red;
+    background-color: #F34624;
+    color: #FBFBFB;
+}
+
+#user-guess {
+    color: #F34624;
 }
 
 #blue-dot {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: blue;
+    background-color: #4186E0;
+    color: #FBFBFB;
+}
+
+#target-num {
+    color: #4186E0;
 }
 
 .arrow-line {
     width: 100%;
     height: 5px;
-    background-color: black;
+    background-color: #2B2B2B;
 }
 
 .arrow-right {
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
-    border-left: 15px solid black;
+    border-left: 15px solid #2B2B2B;
 }
 
 .arrow-left {
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
-    border-right: 15px solid black;
+    border-right: 15px solid #2B2B2B;
 }
 
 /* Layout and Positioning */
@@ -156,8 +169,8 @@ h1 {
 
 #home {
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 40px;
+    left: 40px;
 }
 
 #stats {
@@ -173,7 +186,7 @@ h1 {
 
 #game {
     width: 65%;
-    margin: 20px auto;
+    margin: 25px auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -302,13 +315,18 @@ h1 {
     opacity: 0;
 }
 
+.unselectable {
+    pointer-events: none;
+    user-select: none;
+}
+
 #confirm-game:hover {
-    background-color: greenyellow;
+    background-color: #85E490;
     transition: background-color 0.1s ease-in-out;
 }
 
 #next-game:hover {
-    background-color: rgb(223, 176, 159);
+    background-color: #85E490;
     transition: background-color 0.1s ease-in-out;
 }
 
@@ -319,4 +337,8 @@ h1 {
 .suggestion-item:hover {
     background-color: lightblue;
     transition: background-color 0.1s ease-in;
+}
+
+#search-box:focus-visible {
+    outline: none;
 }

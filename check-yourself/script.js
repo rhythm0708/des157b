@@ -80,6 +80,7 @@
 
             // Disallow multiple submits.
             searchBox.readOnly = true;
+            confirmButton.classList.add("unselectable");
             roundPlayed = true;
 
             // Add guess to usedGames list.
@@ -96,7 +97,9 @@
 
         resultsBox.classList.add("invisible");
         searchBox.readOnly = false;
+        confirmButton.classList.remove("unselectable");
         searchBox.value = "";
+        searchBox.classList.remove("valid");
         roundPlayed = false;
         randomizeGame();
     })
