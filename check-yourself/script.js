@@ -13,6 +13,9 @@
     let roundPlayed = false;
     let usedGames = [];
 
+    // Log.
+    let gameLog = [];
+
     // DOM elements.
     const playerScore = document.querySelector("#score");
     const playerRounds = document.querySelector("#rounds");
@@ -30,6 +33,9 @@
     const commentTargetNum = document.querySelector("#target-num");
     const commentDiff = document.querySelector("#diff");
     const nextButton = document.querySelector("#next-game");
+    const logButton = document.querySelector(".fa-scroll");
+    const userLog = document.querySelector("#log");
+    const logDataBox = document.querySelector("#log-data");
 
     // Autocomplete filter.
     searchBox.addEventListener("input", function(){
@@ -85,6 +91,8 @@
 
             // Add guess to usedGames list.
             usedGames.push(searchBox.value);
+            addToLog(playerGuess, realAns);
+
         } else if(usedGames.includes(searchBox.value)) {
             alert("sneaky... you can't do that!")
         } else {
@@ -94,7 +102,6 @@
 
     nextButton.addEventListener("click", function(e){
         e.preventDefault();
-
         resultsBox.classList.add("invisible");
         searchBox.readOnly = false;
         confirmButton.classList.remove("unselectable");
@@ -102,7 +109,11 @@
         searchBox.classList.remove("valid");
         roundPlayed = false;
         randomizeGame();
-    })
+    });
+
+    logButton.addEventListener("click", function(){
+        logDataBox.className = (logDataBox.className === "swipe-down") ? "swipe-up" : "swipe-down";
+    });
 
     // FUNCTIONS.
     async function fetchData() {
@@ -196,6 +207,64 @@
             arrowContainer.querySelector(".arrow-right").classList.add("invisible");
         }
         arrowDiffNum.textContent = diff;
+    }
+
+    function addToLog(playerGuess, realAns){
+        gameLog.push({
+            guessGame: searchBox.value,
+            guessVal: playerGuess,
+            targetGame: targetGame.textContent,
+            targetVal: realAns,
+            diff: arrowDiffSign.textContent + arrowDiffNum.textContent
+        });
+        updateUILog();
+    }
+
+    function updateUILog(){
+        userLog.innerHTML = "";
+        // Make heading.
+        const entry = document.createElement("div");
+        entry.className = "log-entry";
+        const p1 = document.createElement("p");
+        p1.className = "red bold";
+        const p2 = document.createElement("p");
+        p2.className = "blue bold";
+        const p3 = document.createElement("p");
+        p3.className = "black bold";
+
+        // Append data.
+        p1.textContent = `Your guess`;
+        p2.textContent = `Target`;
+        p3.textContent = `Difference`;
+
+        // Append to UI log.
+        entry.appendChild(p1);
+        entry.appendChild(p2);
+        entry.appendChild(p3);
+        userLog.appendChild(entry);
+
+        for(let part of gameLog.reverse()){
+            // Make elements.
+            const entry = document.createElement("div");
+            entry.className = "log-entry";
+            const p1 = document.createElement("p");
+            p1.className = "red";
+            const p2 = document.createElement("p");
+            p2.className = "blue";
+            const p3 = document.createElement("p");
+            p3.className = "black";
+
+            // Append data.
+            p1.textContent = `${part.guessGame} (${part.guessVal})`;
+            p2.textContent = `${part.targetGame} (${part.targetVal})`;
+            p3.textContent = `${part.diff}`;
+
+            // Append to UI log.
+            entry.appendChild(p1);
+            entry.appendChild(p2);
+            entry.appendChild(p3);
+            userLog.appendChild(entry);
+        }
     }
 
     function toTitleCase(str){
