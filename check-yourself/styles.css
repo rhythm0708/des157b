@@ -356,13 +356,14 @@ h1 {
 #log-data {
     position: absolute;
     bottom: 0px;
-    left: 50px;
+    left: 10px;
 }  
 
 #log {
     position: absolute;
-    width: 300px;
+    width: 320px;
     height: 320px;
+    padding: 5px;
     overflow-y: scroll;
 }
 
