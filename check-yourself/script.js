@@ -243,7 +243,9 @@
         entry.appendChild(p3);
         userLog.appendChild(entry);
 
-        for(let part of gameLog.reverse()){
+        let reversedLog = gameLog.reverse();
+
+        for(let part of reversedLog){
             // Make elements.
             const entry = document.createElement("div");
             entry.className = "log-entry";
