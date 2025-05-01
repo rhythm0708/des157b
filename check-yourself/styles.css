@@ -203,7 +203,6 @@ button {
 body {
     width: 90%;
     margin: 50px auto;
-    overflow: hidden;
 }
 
 h1 {
@@ -354,7 +353,7 @@ h1 {
 }
 
 #log-data {
-    position: absolute;
+    position: fixed;
     bottom: 0px;
     left: 10px;
 }  
