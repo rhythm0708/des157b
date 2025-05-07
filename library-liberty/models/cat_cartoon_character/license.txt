@@ -1,0 +1,11 @@
+Model Information:
+* title:	Cat Cartoon Character
+* source:	https://sketchfab.com/3d-models/cat-cartoon-character-8e30f525aa61481f8ec4ca22a3a5cc83
+* author:	hunnyduke (https://sketchfab.com/hunnyduke)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Cat Cartoon Character" (https://sketchfab.com/3d-models/cat-cartoon-character-8e30f525aa61481f8ec4ca22a3a5cc83) by hunnyduke (https://sketchfab.com/hunnyduke) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

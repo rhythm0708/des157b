@@ -34,7 +34,15 @@ h1, h2, p {
 }
 
 .fa-solid {
-    font-size: 36px;
+    font-size: 48px;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+h2 {
+    text-align: center;
 }
 
 /* Color */
@@ -43,16 +51,125 @@ body {
     background: linear-gradient(0deg, rgba(255, 221, 215, 1) 5%, rgba(193, 163, 215, 1) 95%);
 }
 
+.purple {
+    color: #957ef4;
+}
+
+.gray {
+    color: #747474;
+}
+
+.pink {
+    color: #eeade4;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+}
+
 /* Layout and Positioning */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#title {
+    display: flex;
+    justify-content: center;
+
+    margin: 20px 40px 60px;
+}
+
+.left {
+    transform: translate(-40px, 20px) rotate(-15deg);
+}
+
+.right {
+    transform: translate(40px, 20px) rotate(15deg);
+}
+
 #icons {
     width: 100%;
     position: absolute;
-    top: 20px;
+    top: 40px;
 
     display: flex;
     justify-content: space-between;
 
     padding: 0 50px;
+}
+
+#activity {
+    width: 60%;
+    display: grid;
+    place-self: center;
+}
+
+#activity canvas {
+    width: 100% !important;
+    height: auto !important;
+    display: block;
+}  
+
+#targets {
+    margin: 25px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+#targets * {
+    flex: 1;
+}
+
+.cat {
+    position: relative;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#cat-1 {
+    background-image: url(svgs/pink-cat.svg);
+}
+
+#cat-2 {
+    background-image: url(svgs/tan-cat.svg);
+}
+
+#cat-3 {
+    background-image: url(svgs/blue-cat.svg);
+}
+
+#cat-4 {
+    background-image: url(svgs/purple-cat.svg);
+}
+
+#cat-5 {
+    background-image: url(svgs/orange-cat.svg);
+}
+
+.check {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 120px;
+    height: 120px;
+    background-image: url(svgs/tick.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#credits {
+    margin-top: 20px;
 }
 
 /* Interactivity */
