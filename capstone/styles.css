@@ -27,7 +27,7 @@ a {
 }
 
 /* Typography */
-h1, p, ul li, ol li, a {
+h1, h2, p, ul li, ol li, a {
     font-family: "Orienta", sans-serif;
     font-weight: 400;
 }
@@ -64,7 +64,7 @@ ol li p, ul li p {
     font-size: 36px;
 }
 
-.italics {
+.italic {
     font-style: italic;
 }
 
@@ -109,6 +109,11 @@ main p {
 
 ol li p, ul li p {
     padding-left: 5px;
+}
+
+hr {
+    width: 100%;
+    margin: 20px 0;
 }
 
 /* Interactivity */
