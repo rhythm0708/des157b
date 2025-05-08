@@ -27,7 +27,7 @@ a {
 }
 
 /* Typography */
-h1, p, ul li {
+h1, p, ul li, ol li, a {
     font-family: "Orienta", sans-serif;
     font-weight: 400;
 }
@@ -38,13 +38,22 @@ h1 {
     font-size: 32px;
 }
 
-p, ul li {
+p, ul li, ol li {
     font-size: 18px;
     line-height: 2em;
 }
 
+ol li p, ul li p {
+    font-size: 14px;
+    line-height: 1.5em;
+}
+
 .italics {
     font-style: italic;
+}
+
+.bold {
+    font-weight: 700;
 }
 
 .end {
@@ -53,6 +62,14 @@ p, ul li {
 
 .fa-house {
     font-size: 36px;
+}
+
+.italics {
+    font-style: italic;
+}
+
+.underline {
+    text-decoration: underline;
 }
 
 /* Color */
@@ -88,6 +105,10 @@ main p {
     position: absolute;
     top: 50px;
     left: 50px;
+}
+
+ol li p, ul li p {
+    padding-left: 5px;
 }
 
 /* Interactivity */
