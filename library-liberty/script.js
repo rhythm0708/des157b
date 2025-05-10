@@ -30,3 +30,10 @@ const invertYOption = document.querySelector("#invertY");
 invertYOption.addEventListener("change", function(e) {
     invertY = e.target.checked;
 })
+
+// Problem 1 - Invert Y axis does not work
+// Problem 2 - Cannot register clicks for cats
+// Problem 3 - Click-hitbox for cats is inaccurate
+
+// Once fixed - apply "ticking" as appropriate and add SFX
+// Remove bounding boxes
