@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { invertY } from './script.js';
 import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 import {OrbitControls} from "three/addons/controls/OrbitControls.js";
 
@@ -74,12 +75,12 @@ loader.load('scene.gltf', (gltf) => {
         catClone.rotation.z = catRotations[i];
         catClone.scale.set(0.1, 0.1, 0.1);
         catClone.updateMatrixWorld(true, false);
+        catData.set(catClone, { catIndex: i });
         scene.add(catClone);
 
         catClone.traverse((child) => {
           if (child.isMesh) {
-              catData.set(catClone, { catIndex: i });
-              clickableMeshes.push(child);
+              clickableMeshes.push(catClone);
           }
           if (child.geometry) {
             child.geometry.computeBoundingBox();
@@ -105,10 +106,14 @@ controls.maxPolarAngle = 2;
 controls.autoRotate = false;
 controls.target = new THREE.Vector3(0,1,0);
 
+
 renderer.setAnimationLoop( animate );
 window.addEventListener('click', onMouseClick, false);
 
 function animate() {
+  if(invertY) {
+    mouse.y = -mouse.y;
+  }
   controls.update();
   renderer.render( scene, camera );
 }
@@ -116,6 +121,11 @@ function animate() {
 function onMouseClick(event) {
   mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
   mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+  if(invertY) {
+    mouse.y = -mouse.y;
+    console.log("inverted");
+  }
 
   raycaster.setFromCamera(mouse, camera);
 
@@ -136,3 +146,7 @@ function onMouseClick(event) {
     }
   }
 }
+
+// Cat faces.
+const cats = document.querySelector(".cat");
+

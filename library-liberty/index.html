@@ -28,17 +28,17 @@
           }
         }
     </script>
-
-    <!-- Script -->
-    <script src="script.js" defer></script>
-    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"></script>
 </head>
 <body>
     <section id="icons">
-        <a href="../index.html">
-            <i class="fa-solid fa-house"></i>
-        </a>
-        <button class="fa-solid fa-gear"></button>
+        <sl-button>
+            <a href="../index.html">
+                <i class="fa-solid fa-house"></i>
+            </a>    
+        </sl-button>
+        <sl-button><i class="fa-solid fa-gear"></i></sl-button>
     </section>
     <section id="title">
         <h1 class="purple left">Find</h1>
@@ -68,18 +68,36 @@
             <div class="not-found"></div>
         </div>
     </section>
-    <section id="credits">
+
+    <section id="settings-overlay" class="visible">
+        <sl-button id="close-icon"><i class="fa-solid fa-xmark"></i></sl-button>
+        <h2>Settings</h2>
+
+        <div class="setting">
+            <label for="volume">Volume</label>
+            <input type="range" id="volume" min="0" max="100" step="1" value="50">
+            <p id="vol-value">50</p>
+        </div>
+
+        <div class="setting">
+            <label for="invertY">Invert Y-Axis</label>
+            <input type="checkbox" id="invertY">
+        </div>
+
         <h2>Credits</h2>
         <p>"Bunny Head Hair Pin" (https://skfb.ly/o6qnI) by neutralize is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).</p>
         <p>"Cat Cartoon Character" (https://skfb.ly/o7TVV) by hunnyduke is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).</p>
-    </section>
+        <p>cat meow II by tuberatanka -- https://freesound.org/s/110010/ -- License: Creative Commons 0</p>
+        <p>meow51252153 (1).ogg by suicdxsaturday -- https://freesound.org/s/698632/ -- License: Creative Commons 0</p>
+        <p>meow.wav by xpoki -- https://freesound.org/s/432759/ -- License: Attribution 3.0</p>
 
-    <section id="libraries">
         <h2>Libraries Used</h2>
         <p>Three.js</p>
+        <p>Shoelace</p>
     </section>
 
-    <!-- Modules -->
+    <!-- Scripts -->
+    <script src="script.js" type="module"></script>
     <script src="three.js" type="module"></script>
 </body>
 </html>
