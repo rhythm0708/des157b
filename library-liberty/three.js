@@ -127,9 +127,10 @@ function onMouseClick(event) {
   mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
 
   if(invertY) {
-    mouse.y = -mouse.y;
     controls.rotateSpeed = -1;
     console.log("inverted");
+  } else {
+    controls.rotateSpeed = 1;
   }
 
   raycaster.setFromCamera(mouse, camera);

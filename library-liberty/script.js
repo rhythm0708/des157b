@@ -31,5 +31,4 @@ invertYOption.addEventListener("change", function(e) {
     invertY = e.target.checked;
 })
 
-// Problem 1 - Invert Y axis does not work
 // Problem 3 - Click-hitbox for cats is inaccurate
