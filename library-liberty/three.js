@@ -1,16 +1,16 @@
 import * as THREE from 'three';
-import { invertY } from './script.js';
+import { invertY, volumeValue } from './script.js';
 import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 import {OrbitControls} from "three/addons/controls/OrbitControls.js";
 
 // Testing coordinates.
-// const catCoords = [[-1,0,0], [-0.5,0,0], [0,0,0], [0.5,0,0], [1,0,0]];
-const catCoords = [[-0.5,2.05,-1.2], [-0,1,0], [-1.2,1,-1], [0.5,2.8,-1], [0,0,-1.5]];
+const catCoords = [[-0.5,2.05,-1.2], [-0,1,0.1], [-1.2,1,-1], [0.5,2.8,-1], [0,0,-1.5]];
 const catRotations = [Math.PI/6,0,Math.PI/2, Math.PI/4, Math.PI];
 const clickableMeshes = [];
 
 // Map.
 const catData = new Map();
+const catInverseData = new Map();
 
 // Set up renderer.
 const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -26,10 +26,11 @@ document.querySelector("#activity").appendChild( renderer.domElement );
 // Set scene and camera.
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000 );
-camera.position.set(0,0,5);
+camera.position.set(0,1,5);
 
 // Raycast and mouse.
 const raycaster = new THREE.Raycaster();
+raycaster.params.Mesh.side = THREE.DoubleSide;
 const mouse = new THREE.Vector2();
 
 // Lighting.
@@ -75,7 +76,8 @@ loader.load('scene.gltf', (gltf) => {
         catClone.rotation.z = catRotations[i];
         catClone.scale.set(0.1, 0.1, 0.1);
         catClone.updateMatrixWorld(true, false);
-        catData.set(catClone, { catIndex: i });
+        catData.set(catClone, i);
+        catInverseData.set(i, catClone);
         scene.add(catClone);
 
         catClone.traverse((child) => {
@@ -88,8 +90,9 @@ loader.load('scene.gltf', (gltf) => {
           }
         });
 
-        const helper = new THREE.BoxHelper(catClone, 0x00ff00);
-        scene.add(helper);
+        // Bounding Box.
+        // const helper = new THREE.BoxHelper(catClone, 0x00ff00);
+        // scene.add(helper);
 
         console.log(`Cat #${i + 1} position:`, catClone.position);
     }
@@ -98,13 +101,13 @@ loader.load('scene.gltf', (gltf) => {
 // Set up controls.
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
-controls.enablePan = false;
+controls.enablePan = true;
 controls.minDistance = 1;
 controls.maxDistance = 20;
 controls.minPolarAngle = 0.5;
 controls.maxPolarAngle = 2;
 controls.autoRotate = false;
-controls.target = new THREE.Vector3(0,1,0);
+controls.target = new THREE.Vector3(0,1,1);
 
 
 renderer.setAnimationLoop( animate );
@@ -112,7 +115,7 @@ window.addEventListener('click', onMouseClick, false);
 
 function animate() {
   if(invertY) {
-    mouse.y = -mouse.y;
+    // WIP.
   }
   controls.update();
   renderer.render( scene, camera );
@@ -133,20 +136,58 @@ function onMouseClick(event) {
   if (intersects.length > 0) {
     let clicked = intersects[0].object;
 
-    while (clicked.parent) {
+    while (clicked.parent && clicked.parent.type !== 'Scene') {
       clicked = clicked.parent;
     }
 
-    const data = catData.get(clicked);
-    if (data) {
-        const catIndex = data.catIndex;
-        alert(`You clicked cat #${catIndex}`);
+    const catIndex = catData.get(clicked);
+    if (catIndex || catIndex == 0) {
+        foundCat(catIndex);
     } else {
+        alert(catIndex);
         console.log("No data found for this object.");
     }
   }
 }
 
-// Cat faces.
-const cats = document.querySelector(".cat");
+// FOUND CAT.
+const meows = ['audio/meow-1.wav', 'audio/meow-2.mp3', 'audio/meow-3.wav'];
 
+function foundCat(index) {
+  // Tick.
+  const catID = `#cat-${index+1}`;
+  document.querySelector(catID).firstElementChild.className = "check";
+
+  // Cat disappears.
+  let catObj = catInverseData.get(index);
+  if(catObj) {
+    scene.remove(catObj);
+  }
+
+  // Meow.
+  let randomMeowNum = Math.floor(Math.random() * 3);
+  let selectedMeow = new Audio(meows[randomMeowNum]);
+  selectedMeow.volume = volumeValue/100;
+  selectedMeow.play();
+
+  // Check all cats found.
+  checkAllCatsFound();
+}
+
+let cats = document.querySelectorAll(".cat");
+const jsConfetti = new JSConfetti()
+
+function checkAllCatsFound(){
+  let allFound = false;
+  for(let cat of cats) {
+    if(cat.firstElementChild.className != "check") {
+      allFound = false;
+      break;
+    } else {
+      allFound = true;
+    }
+  }
+  if(allFound) {
+    jsConfetti.addConfetti();
+  }
+}
