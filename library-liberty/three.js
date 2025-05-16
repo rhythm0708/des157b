@@ -106,6 +106,7 @@ controls.minDistance = 1;
 controls.maxDistance = 20;
 controls.minPolarAngle = 0.5;
 controls.maxPolarAngle = 2;
+controls.rotateSpeed = 1;
 controls.autoRotate = false;
 controls.target = new THREE.Vector3(0,1,1);
 
@@ -127,6 +128,7 @@ function onMouseClick(event) {
 
   if(invertY) {
     mouse.y = -mouse.y;
+    controls.rotateSpeed = -1;
     console.log("inverted");
   }
 
