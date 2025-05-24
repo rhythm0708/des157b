@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What-If.AI</title>
+
+    <!-- Normalize.css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+
+    <!-- Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Hepta+Slab:wght@1..900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/0a510a4691.js" crossorigin="anonymous"></script>
+
+    <!-- Libraries (AOS, Granim, Swiper)-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="granim.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Stylesheet-->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Script -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>What if AI was...</h1>
+    </header>
+
+    <main>
+        <div class="swiper" id="carousel">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide active" id="minisode-1">
+                    <h2>in hiring?</h2>
+                </div>
+                <div class="swiper-slide inactive" id="minisode-2">
+                    <h2>in policing?</h2>
+                </div>
+                <div class="swiper-slide inactive" id="minisode-3">
+                    <h2>a news bot?</h2>
+                </div>
+                <div class="swiper-slide inactive" id="minisode-4">
+                    <h2>a recycling bot?</h2>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section id="caption">
+        <p>bla bla bla</p>
+
+        <div class="swiper-prev"></div>
+        <div class="swiper-next"></div>
+    </section>
+
+    <section id="article-overlay" class="hidden">
+        <i class="fa-solid fa-xmark"></i>
+    </section>
+
+    <canvas id="background"></canvas>
+</body>
+</html>
