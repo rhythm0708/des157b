@@ -12,7 +12,7 @@
 
     // Alert.
     alert("You are a user who is interested in speculative fiction about AI. First, you want to learn more about AI in hiring.");
-    
+
     // AOS.
     AOS.init();
 
