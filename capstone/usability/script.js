@@ -7,14 +7,17 @@
     const captions = ["bla bla bla", "bla bla 2", "bla bla 3", "bla bla 4"];
     let captionText = document.querySelector("#caption p");
     const articleOverlay = document.querySelector("#article-overlay");
-    const articles = document.querySelectorAll("#article-overlay article");
+    const articles = document.querySelectorAll("article");
     const closeArticle = document.querySelector(".fa-xmark");
 
     // Alert.
-    alert("You are a user who is interested in speculative fiction about AI. First, you want to learn more about AI in hiring.");
+    alert("You are a user who is interested in speculative fiction about AI.\n\n 1. You want to learn more about AI in hiring. Read that article. \n 2. Return to home screen.\n 3. Scroll to another article and enter it");
 
     // AOS.
-    AOS.init();
+    AOS.init({
+        offset: 600,
+        once: true,
+    });
 
     // SWIPER.
     const swiper = new Swiper('.swiper', {
@@ -63,6 +66,22 @@
         // Make article visible.
         articles.forEach(article => article.className = "not-displaying");
         articles[articleNo-1].className = "displaying";
+    }));
+
+    // Scroll animations.
+    articles.forEach(article => article.addEventListener("scroll", function(){
+        const elements = article.querySelectorAll('[data-aos]');
+        elements.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            const inView = rect.top >= 0 && rect.bottom <= window.innerHeight;
+
+            if (inView) {
+                el.classList.add('aos-animate');
+            } 
+            // else {
+            //     el.classList.remove('aos-animate');
+            // }
+        });
     }));
 
     // Close article.
