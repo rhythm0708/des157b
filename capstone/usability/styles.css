@@ -63,7 +63,8 @@ article p {
 }
 
 article button {
-    font-size: 20px;
+    font-family: "Bitter", serif;
+    font-size: 18px;
     line-height: 2em;
 }
 
@@ -168,6 +169,11 @@ h1 {
     margin-right: -240px;
 }
 
+.gap {
+    color: red;
+    opacity: 0%;
+}
+
 /* Layout */
 body {
     overflow-x: hidden;
@@ -269,7 +275,14 @@ article p {
 
 .gap {
     width: 100%;
-    height: 200px;
+    margin: 200px 0;
+}
+
+.return-home {
+    width: 40%;
+    border-radius: 20px;
+    border: none;
+    margin-bottom: 80px;
 }
 
 /* Interactivity */
@@ -342,4 +355,9 @@ article p {
 .swiper-slide.active:hover {
     transform: scale(1.1);
     transition: all 0.5s transform;
+}
+
+.return-home:hover {
+    background-color: darkgray;
+    transition: all 0.3s ease-in-out;
 }

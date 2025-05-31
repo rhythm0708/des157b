@@ -9,14 +9,14 @@
     const articleOverlay = document.querySelector("#article-overlay");
     const articles = document.querySelectorAll("article");
     const closeArticle = document.querySelector(".fa-xmark");
+    const returnHome = document.querySelectorAll("article button");
 
     // Alert.
     alert("You are a user who is interested in speculative fiction about AI.\n\n 1. You want to learn more about AI in hiring. Read that article. \n 2. Return to home screen.\n 3. Scroll to another article and enter it");
 
     // AOS.
     AOS.init({
-        offset: 600,
-        once: true,
+        offset: 600
     });
 
     // SWIPER.
@@ -74,6 +74,7 @@
         elements.forEach(el => {
             const rect = el.getBoundingClientRect();
             const inView = rect.top >= 0 && rect.bottom <= window.innerHeight;
+            el.classList.add('aos-init');
 
             if (inView) {
                 el.classList.add('aos-animate');
@@ -88,6 +89,10 @@
     closeArticle.addEventListener("click", function(){
         returnToHome();
     });
+
+    returnHome.forEach(buttton => buttton.addEventListener("click", function() {
+        returnToHome();
+    }));
 
     // GRANIM.
     var granimInstance = new Granim({
