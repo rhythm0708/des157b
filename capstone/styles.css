@@ -116,6 +116,20 @@ hr {
     margin: 20px 0;
 }
 
+img {
+    margin: 20px;
+}
+
+.left-right {
+    width: 45%;
+    display: flex;
+    gap: 20px;
+}
+
+.left-right img {
+    flex: 1;
+}
+
 /* Interactivity */
 
 .fa-solid:hover {
