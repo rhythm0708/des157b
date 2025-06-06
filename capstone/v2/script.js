@@ -4,11 +4,14 @@
 
     // VARIABLES.
     const slides = document.querySelectorAll(".swiper-slide");
-    const captions = ["bla bla bla", "bla bla 2", "bla bla 3", "bla bla 4"];
+    const captions = ["AI is rewriting the rules of job hiring—will it make them fairer, or just more biased?",
+         "Predict crimes before they happen. That's the promise of AI policing. But is that what's really happening?", 
+         "Would you trade years in prison for minutes in a virtual AI experiment?", 
+         "Recycling and waste are growing issues. But AI is providing a light in the dark."];
     let captionText = document.querySelector("#caption p");
     const articleOverlay = document.querySelector("#article-overlay");
     const articles = document.querySelectorAll("article");
-    const closeArticle = document.querySelector(".fa-xmark");
+    const closeArticle = document.querySelectorAll(".fa-xmark");
     const returnHome = document.querySelectorAll("article button");
 
     // AOS.
@@ -84,9 +87,9 @@
     }));
 
     // Close article.
-    closeArticle.addEventListener("click", function(){
+    closeArticle.forEach(x => x.addEventListener("click", function() {
         returnToHome();
-    });
+    }))
 
     returnHome.forEach(buttton => buttton.addEventListener("click", function() {
         returnToHome();
@@ -102,6 +105,10 @@
             gradients: [
                 [
                     // Edit this one.
+                    // { color: '#A681AE', pos: 0 },
+                    // { color: '#AA4AA8', pos: .49 },
+                    // { color: '#DF35B2', pos: 1 }
+
                     { color: '#8737B2', pos: 0 },
                     { color: '#BA4399', pos: .62 },
                     { color: '#DA6199', pos: 1 }

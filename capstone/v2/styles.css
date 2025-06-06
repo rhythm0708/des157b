@@ -68,6 +68,12 @@ article button {
     line-height: 2em;
 }
 
+#caption p {
+    font-style: italic;
+    text-align: center;
+    line-height: 1.5em;
+}
+
 /* Color */
 
 .swiper-slide {
@@ -174,6 +180,10 @@ h1 {
     opacity: 0%;
 }
 
+.return-home {
+    background-color: #ECECEC;
+}
+
 /* Layout */
 body {
     overflow-x: hidden;
@@ -224,14 +234,25 @@ main {
     align-items: center;
 
     padding: 40px;
+    margin: auto;
+}
+
+#caption p {
+    width: 40%;
+}
+
+article header {
+    position: relative;
+    overflow: visible;
 }
 
 .fa-xmark {
     position: absolute;
-    top: 7.5svh;
-    right: 25svw;
+    top: 2svh;
+    right: -5svw;
 
-    font-size: 48px;
+    font-size: 54px;
+    cursor: pointer;
 }
 
 #article-overlay {
@@ -257,7 +278,7 @@ article::-webkit-scrollbar {
 }
 
 article header {
-    margin: 40px 0px 20px;
+    margin: 40px 0px 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -363,6 +384,11 @@ article p {
 }
 
 .return-home:hover {
-    background-color: darkgray;
-    transition: all 0.3s ease-in-out;
+    background-color: #d3c2d9;
+    transition: all 0.2s ease-in-out;
+}
+
+.swiper-prev:hover, .swiper-next:hover {
+    filter: brightness(0.7);
+    transition: filter 0.2s ease-in-out;
 }
