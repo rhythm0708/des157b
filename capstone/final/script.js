@@ -35,7 +35,7 @@
         
     // AOS.
     AOS.init({
-        offset: 50
+        offset: -200
     });
 
     // SWIPER.
