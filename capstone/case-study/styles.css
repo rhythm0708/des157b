@@ -35,6 +35,7 @@ header h1, header p, header address, header em, footer p, footer address, footer
 
 header, footer {
     background-color: #aa72c6;
+    position: relative;
 }
 
 body {
@@ -93,6 +94,14 @@ nav li:nth-child(even) a {
 
 address {
     padding-bottom: 1em;
+}
+
+header .feather-icon {
+    display: none;
+}
+
+.feather-icon:hover {
+    transform: scale(1.1);
 }
 
 /* end Resets */
@@ -157,5 +166,18 @@ img {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 20px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    header .feather-icon {
+        display: inline;
+        position: absolute;
+        top: 1.5em;
+        left: 1.5em;
+
+        width: 2em;
+        height: 2em;
+        stroke-width: 2;
     }
 }
