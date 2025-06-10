@@ -9,6 +9,11 @@ nav ul {
 img { max-width: 100%; display: block; }
 * { box-sizing: border-box;}
 
+/* styles */
+address {
+    padding-bottom: 1em;
+}
+
 /* end Resets */
 html {
     scroll-behavior: smooth;

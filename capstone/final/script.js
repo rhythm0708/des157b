@@ -35,7 +35,7 @@
         
     // AOS.
     AOS.init({
-        offset: 600
+        offset: 50
     });
 
     // SWIPER.
@@ -54,8 +54,6 @@
     });
 
     swiper.on('slideChange', function () {
-        console.log(swiper.activeIndex);
-
         // Set opacity. 
         let activeSlide = document.querySelector(`#minisode-${swiper.realIndex + 1}`);
 
