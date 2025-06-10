@@ -13,9 +13,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Hepta+Slab:wght@1..900&display=swap" rel="stylesheet">
 	
-	<!--/ /-------- Font Awesome --------/ /-->
-    <!--Add this if you want icons from font awesome
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">-->
+	<!-- Libraries (AOS)-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 	
 	<!--/ /-------- Your Styles --------/ /-->
 	<link href="styles.css" rel="stylesheet">
@@ -46,7 +46,7 @@
     <!--/ /-------- Overview Section --------/ /-->
     <section id="overview">
         <div class="container">
-            <h2>Project Overview</h2>
+            <h2 data-aos="fade-down">Project Overview</h2>
             <div class="image-column">
                 <img src="images/cover-image.png" alt="cover image">
                 <div class="image-row">
@@ -54,7 +54,7 @@
                     <img src="images/cover-image-3.png" alt="cover image 3">
                 </div>
             </div>
-            <div class="content">
+            <div class="content" data-aos="fade-up">
                 <p>For my capstone project, I designed a website exploring how the future might be shaped by artifical intelligence. I chose this topic because it is timely and deeply consequential to our future. I imagine the site as a safe, speculative space where users can reflect on and engage with potential AI-driven futures. While targeted towards teenagers and young adults, it is designed to be accessible to people of all ages.</p>
 
                 <p>My goal for this project was to move beyond the simple games and interactive experiments that I had been creating throughout the year and challenge myself with an informational website. Through this project, I hoped to develop my visual design, animation, and data visualization skills to tell a compelling story about a topic that affects everyone.</p>
@@ -67,8 +67,8 @@
     <!--/ /-------- UX Research Section --------/ /-->
     <section id="research">
         <div class="container">
-            <h2>Project Research</h2>
-            <div class="content">
+            <h2 data-aos="fade-right">Project Research</h2>
+            <div class="content" data-aos="fade-right">
                 <p>To create believable, true-to-life narratives, I conducted research into how AI is being applied to different domains. First, I conducted informal user research through conversations with classmates, friends, and professor Mead. These conversations helped me identify emerging trends and areas of interest worth exploring further. Then, I followed up with online research on YouTube and reputable news sites such as Forbes and Medium.</p>
 
                 <p>I also conducted comparative research into similar web-based projects and noticed that many lacked depth, often being based in the author's personal perspective. As a result, I felt that a lot of these projects lacked value or informative-ness. Here, I saw an opportunity to differentiate myself by grounding my speculative narratives in real-world examples and supporting them with data. This approach allows users to feel like they are learning and reflecting on something meaningful while engaging with my project.</p>
@@ -84,8 +84,8 @@
     <!--/ /-------- Design Section --------/ /-->
     <section id="design">
         <div class="container">
-            <h2>Visual Design</h2>
-            <div class="content">
+            <h2 data-aos="fade-left">Visual Design</h2>
+            <div class="content" data-aos="fade-left">
                 <img src="images/sketch.png" alt="sketch">
                 <p>I established the visual design early in the project and developed it further when doing mid-fis and hi-fis. I aimed for a dreamy, ethereal atmosphere—one that evoked a feeling of safety and reflection as users pondered their thoughts on AI. I focused on using animation and color to create smooth, seamless, and immersive transitions between the homepage and each article.</p>
 
@@ -97,8 +97,8 @@
     <!--/ /-------- UI Section --------/ /-->
     <section id="ui">
         <div class="container">
-            <h2>User Interface</h2>
-            <div class="content">
+            <h2 data-aos="fade-right">User Interface</h2>
+            <div class="content" data-aos="fade-right">
                 <div class="column">
                     <p>My goal for the user interface was to keep it simple and intuitive. I aimed to minimize the number of actions available to the user at a time, while maximizing the number of ways to perform each action. This approach is most evident in the carousel on my homescreen, which users can navigate through by swiping, clicking on the arrows, or using the keyboard (WIP). To create this functionality, I used the Swiper JavaScript library and built CSS/JS on top of it.</p>
 
@@ -126,8 +126,8 @@
     <!--/ /-------- Revisions Section --------/ /-->
     <section id="revisions">
         <div class="container">
-            <h2>Revisions</h2>
-            <div class="content">
+            <h2 data-aos="fade-right">Revisions</h2>
+            <div class="content" data-aos="fade-right">
                 <p>Usability testing was another important step that helped me identify key issues and refine the concept/content of my project. My tests revealed that users liked the simple and intuitive navigation of my site, but felt that the writing could be more speculative. At this point, I had mostly been describing present-day AI practices while users had hoped to learn about unseen or lesser-known AI futures. This early realization helped me revise the approach of my project to work towards a more imaginative and impactful final experience.</p>
 
                 <p>My tests also revealed the importance of visuals. Although they had not yet been implemented, their absence made it clear that they were essential to the impact of the articles. Here, I asked testers whether they would prefer to see sketches, vector graphics, or real photographs in the placeholder spots. Most felt that sketches would best fit the dreamy, ethereal tone of the site—photographs felt too grounded in reality. This feedback motivated me to spend more energy developing the visuals of my project, which would help bring it to life.</p>
@@ -143,8 +143,8 @@
     <!--/ /-------- Summary Section --------/ /-->
     <section id="summary">
         <div class="container">
-            <h2>Summary</h2>
-            <div class="content">
+            <h2 data-aos="fade-left">Summary</h2>
+            <div class="content" data-aos="fade-left">
                 <p>All in all, I'm proud of the final outcome and learned a lot throughout the process. Given time limitations and other constraints I faced this quarter, I think that keeping the scope small was a smart decision. I learned how to effectively prioritize, use user feedback to target key areas, and thoughtfully integrate sound, visuals, and native HTML/CSS elements into a project.</p>
 
                 <p>What I'm most proud of in this project are the animations and transitions between the homepage and articles. I thought they were creative and visually appealing. I'm also pretty happy with the mood I was able to create through visuals, color, and music—it came surprisingly close to my original vision. Finally, it was rewarding to learn to work with the Swiper library and customize it beyond its default capabilities.</p>
@@ -163,5 +163,8 @@
         </div>
     </footer>
     
+    <script>
+        AOS.init({offset: 150});
+    </script>
 </body>
 </html>
