@@ -10,6 +10,87 @@ img { max-width: 100%; display: block; }
 * { box-sizing: border-box;}
 
 /* styles */
+h1 {
+    font-family: "Hepta Slab", serif;
+    font-weight: 400;
+    color: #333;
+}
+
+h2 {
+    font-family: "Bitter", serif;
+    font-weight: 500;
+    line-height: 1.5em;
+    color: #333;
+}
+
+p, address, em, ul li, ol li, a {
+    font-family: "Bitter", serif;
+    font-weight: 400;
+    color: #333;
+}
+
+header h1, header p, header address, header em, footer p, footer address, footer a {
+    color: #e7e7e7;
+}
+
+header, footer {
+    background-color: #aa72c6;
+}
+
+body {
+    background-color: #D9D9D9;
+}
+
+section:nth-child(even){
+    background-color: rgb(205, 195, 205);
+}
+
+section h2 {
+    color: #BA4399;
+    border-radius: 10px;
+    background-color: rgba(207, 145, 191, 0.4);
+
+    display: inline;
+    padding: 0.1em 0.2em;
+}
+
+section:nth-child(even) h2{
+    color: #9646c1;
+}
+
+nav li:nth-child(odd) a {
+    color: #333;
+    font-weight: 700;
+}
+
+nav li:nth-child(even) a {
+    color: #333;
+    font-weight: 700;
+}
+
+.content, .image-column {
+    margin-top: 1em;
+}
+
+.image-column {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.image-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.image-column img, .image-row img {
+    width: 600px;
+    flex: 1;
+}
+
 address {
     padding-bottom: 1em;
 }
@@ -26,27 +107,18 @@ body {
 nav {
     border-top: 2px solid #333;
 }
+
 nav ul li a {
     text-decoration: none;
     display: block;
-    color:cornflowerblue;
-    font-weight: bold;
     border-bottom: 2px solid #333;
     text-align: center;
     padding: 10px;
 
 }
 
-header, footer {
-    background-color: rgb(235, 235, 235);
-}
-
 header, section, footer {
     padding: 20px;
-}
-
-section:nth-child(even){
-    background-color: aliceblue;
 }
 
 .container {
